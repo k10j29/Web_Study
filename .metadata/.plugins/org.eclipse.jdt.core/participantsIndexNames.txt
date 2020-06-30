@@ -1,0 +1,15 @@
+INDEX VERSION 1.131
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3627260057.index
+\2020_0619_LayoutTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2767064236.index
+\2020_0619_LayoutTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2897127596.index
+\2020_0619_LayoutTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1706136810.index
+\2020_0611_HtmlTest2\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3434240674.index
+\2020_0619_LayoutTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\682467646.index
+\2020_0619_LayoutTest\src
+C:\My_Study\Web_Study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3866458966.index
+\2020_0611_HtmlTest\src

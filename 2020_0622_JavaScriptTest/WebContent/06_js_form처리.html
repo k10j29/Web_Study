@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function send1(){
+		var f = document.forms[0];
+		//입력값 얻어오기
+		var id  = f.id.value.trim();//값읽어오기+공백제거
+		var pwd = f.pwd.value.trim();
+		
+		//아이디가 입력되지 않았으면
+		if(id == ""){
+			alert("아이디를 입력하세요");
+			f.id.value="";//이전값 지우기
+			f.id.focus(); //포커스지정
+			return;
+		}
+		
+		if(pwd == ""){
+			alert("비밀번호를 입력하세요");
+			f.pwd.value="";//이전값 지우기
+			f.pwd.focus(); //포커스지정
+			return;
+		}
+		
+		//서버로 전송:지정된 action으로 데이터 전송
+		f.action = "login.do";
+		//주의: 자바스크립트함수사용시 반드시 () 체크
+		f.submit();		// f.submit; (X)
+	}
+	
+	function send2(){
+		//form name을 이용한 폼정보 구하기
+		var f = document.f1;
+		//입력값 얻어오기
+		var id  = f.id.value.trim();//값읽어오기+공백제거
+		var pwd = f.pwd.value.trim();
+		
+		//아이디가 입력되지 않았으면
+		if(id == ""){
+			alert("아이디를 입력하세요");
+			f.id.value="";//이전값 지우기
+			f.id.focus(); //포커스지정
+			return;
+		}
+		
+		if(pwd == ""){
+			alert("비밀번호를 입력하세요");
+			f.pwd.value="";//이전값 지우기
+			f.pwd.focus(); //포커스지정
+			return;
+		}
+		
+		//서버로 전송:지정된 action으로 데이터 전송
+		f.action = "login.do";
+		//주의: 자바스크립트함수사용시 반드시 () 체크
+		f.submit();		// f.submit; (X)
+	}
+	
+	//자바스크립트에서 함수 인자는 변수명만 기록
+	function send3(f){ //f=this.form
+		//입력값 얻어오기
+		var id  = f.id.value.trim();//값읽어오기+공백제거
+		var pwd = f.pwd.value.trim();
+		
+		//아이디가 입력되지 않았으면
+		if(id == ""){
+			alert("아이디를 입력하세요");
+			f.id.value="";//이전값 지우기
+			f.id.focus(); //포커스지정
+			return;
+		}
+		
+		if(pwd == ""){
+			alert("비밀번호를 입력하세요");
+			f.pwd.value="";//이전값 지우기
+			f.pwd.focus(); //포커스지정
+			return;
+		}
+		
+		//서버로 전송:지정된 action으로 데이터 전송
+		f.action = "login.do";
+		//주의: 자바스크립트함수사용시 반드시 () 체크
+		f.submit();		// f.submit; (X)
+	}
+
+</script>
+
+
+</head>
+<body>
+
+<!-- form의 용도 : 서버로 데이터를 전송할때 사용  -->
+<!--  document.forms : 현재문서내에 form정보를 배열로 저장 -->
+
+<form name="f1" action="login.do">
+	<table border="1">
+		<tr>
+			<th>아이디</th>
+			<td><input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<th>비밀번호</th>
+			<td><input type="password" name="pwd"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button"  value="전송1" 
+				       onclick="send1();">
+				       
+				<input type="button"  value="전송2"
+				       onclick="send2();">
+				 
+				<!-- this.form:  this를 소유하고 있는 form -->       
+				<input type="button"  value="전송3"
+				       onclick="send3(this.form);">
+				   
+				<!-- form요소가 아니기때문에 this.form사용 못한다 -->       
+				<!-- <img src="login.png" onclick="send3(this.form);"> -->    
+				
+				<!-- 주의) type="image" 또는 <button>는 auto-subimt 설정되어있다
+				           onsubmit() 자동호출된다
+				           event 후미에 return false;->auto-submit중지해라    
+				 -->   
+				<input type="image" src="login.png" 
+				        onclick="send3(this.form); return false;">
+				<button onclick="return false;">전송4</button>
+				 
+				
+			</td>
+		</tr>
+	</table>
+</form>
+
+
+
+</body>
+</html>

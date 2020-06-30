@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<hr>
+	첫번째 방법
+	<hr>
+
+	<!-- http://localhost:9090/2020_0629_ServletEx1_30/hello.html -->
+
+	<ul>
+		<li><a href="hello.do?nation=kor">한국</a></li>
+		<li><a href="hello.do?nation=eng">영어</a></li>
+		<li><a href="hello.do?nation=jpn">일본</a></li>
+		<li><a href="hello.do?nation=chn">중국</a></li>
+		<li><a href="hello.do?nation=ger">독일</a></li>
+	</ul>
+
+	<hr>
+	두번째 방법
+	<hr>
+
+	<form action="hello.do">
+		<input type="radio" name="nation" value="kor" checked="checked">한국
+		<input type="radio" name="nation" value="eng"> 미국 <input
+			type="radio" name="nation" value="jpn"> 일본 <input
+			type="radio" name="nation" value="chn"> 중국 <input
+			type="radio" name="nation" value="ger"> 독일 <br> <br>
+
+		<input type="submit" value="알려줘">
+
+	</form>
+
+
+</body>
+</html>

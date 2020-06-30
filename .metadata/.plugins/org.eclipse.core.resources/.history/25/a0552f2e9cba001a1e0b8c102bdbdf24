@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript"> 
+<!--
+function c_check(x) {
+var yy = x.c1.value.substring(0,2);
+var mm = x.c1.value.substring(2,4);
+var dd = x.c1.value.substring(4,6);
+var gender = x.c2.value.substring(0,1);
+var ck=0;
+
+// 처음 7자 검사
+if (x.c1.value.length != 6 || x.c2.value.length != 7 || yy < 20 || mm < 1 || mm > 12 || dd < 0 || dd > 31 || gender > 2 || gender < 1) {
+alert("잘못된 주민등록번호입니다.");
+x.c1.value=x.c2.value="";
+x.c1.focus();
+return;
+}
+
+//끝자리 검증번호 유효성 검사
+var total = x.c1.value + x.c2.value;
+for (i=0; i < 12; i++) {
+ck  += (i%8+2)*total.substring(i, i+1);
+}
+ck = (11-(ck%11))%10;
+if (parseInt(ck) != parseInt(total.substring(12, 13))) {
+alert("잘못된 주민등록번호입니다.")
+x.c1.value=x.c2.value="";
+x.c1.focus();
+return;
+}
+alert("잘 입력하셨습니다.")
+} 
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM>
+<H3>주민등록 번호를 입력해 주세요.</H3>
+<FORM>
+주민등록 번호: <INPUT NAME="c1" SIZE="10" MAXLENGTH="6"> - 
+<INPUT NAME="c2" SIZE="10" MAXLENGTH="7">
+<INPUT TYPE="button" VALUE="검사 시작" onclick="c_check(this.form)">
+</FORM>
+</BODY>
+</HTML>

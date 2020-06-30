@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*  
+   JSON(JavaScript Object Notation)
+   : 자바스크립트에서 객체 표현방법
+                         key   : value,        key : value
+     JSON표기법 ->  { "변수명1": "값1" , "변수명2" : "값2" , ... }
+   
+   cf) PersonVo p = new Person("일길동",30,"서울 관악");
+                    
+   var p = { "name":"일길동" ,"age": 30, "addr":"서울 관악" };
+*/
+  
+   var p = { "name":"일길동" ,"age": 30, "addr":"서울 관악" };
+   document.write("p's name=" + p.name + "<br>");
+   document.write("p's age="  + p.age  + "<br>");
+   document.write("p's addr=" + p.addr + "<br>");
+   
+   var p1 = { "name":{"first":"홍","last":"길동"}, "age":20   };
+               //      성              이름        
+   document.write(p1.name.first + p1.name.last + "<br>");
+               
+   var p2 = { "name":"박길동", "hobby": ["독서","낚시","운동"]  };            
+   document.write(p2.name +"님의 취미는");
+   for(var i=0;i< p2.hobby.length;i++){ //i = 0 1 2
+	   document.write(" " + p2.hobby[i]);
+   }
+   
+   document.write("<br>");//줄바꾸기
+   
+   //JSON Array
+   
+   var p_array = 
+	       [ 
+	         {"name":"일길동" , "age": 21 , "addr":"서울 관악 1동"}, //0
+	         {"name":"이길동" , "age": 22 , "addr":"서울 관악 2동"}, //1
+	         {"name":"삼길동" , "age": 23 , "addr":"서울 관악 3동"}  //2
+           ];
+
+   document.write(p_array.length+"<br>");
+   //배열요소를 추가
+   p_array[4] = {"name":"구길동" , "age": 29 , "addr":"서울 관악 3동"}  //9
+   document.write(p_array.length+"<br>");
+   
+   for(var i = 0 ; i< p_array.length; i++){
+	   
+	   var pp = p_array[i];
+	   //document.write(pp+"<br>");
+	   if(pp!=undefined)
+	      document.write(pp.name + "/" + pp.age + "/" + pp.addr + "<br>");
+	   else
+		  document.write("data empty<br>")  
+   }
+   
+   
+   var p_json = { "data" : [ 
+						       {"name":"일길동" , "age": 21 , "addr":"서울 관악 1동"}, //0
+						       {"name":"이길동" , "age": 22 , "addr":"서울 관악 2동"}, //1
+						       {"name":"삼길동" , "age": 23 , "addr":"서울 관악 3동"}  //2
+					       ] 
+                 };
+   //목록 출력
+   document.write("-----p_json.data-----<br>");
+   for(var i=0;i<p_json.data.length;i++){ //i = 0 1 2
+	   
+	   var pj = p_json.data[i];
+	   document.write(pj.name + "/" + pj.age + "/" + pj.addr + "<br>");
+   }
+   
+   
+   
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

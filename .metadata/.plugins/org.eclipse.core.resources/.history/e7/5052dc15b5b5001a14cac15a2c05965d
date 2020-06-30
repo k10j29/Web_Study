@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"></script>
+
+<!-- JSON (Java Script Object Notation) -->
+<!-- :자바스크립트에서 객체 표현방법 
+  cf) PrersonVo p = new Person ("이름", "나이", "사는곳");
+  -->
+
+</head>
+<body>
+
+</body>
+</html>

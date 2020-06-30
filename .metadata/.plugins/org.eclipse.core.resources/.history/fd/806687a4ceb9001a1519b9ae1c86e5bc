@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var regular_num = /^[0-9]{1,5}$/;
+
+	function send(f) {
+
+		var su1 = f.su1.value.trim();
+		var su2 = f.su2.value.trim();
+
+	}
+</script>
+</head>
+<body>
+
+	<form action="calc.do">
+		수 1 : <input name="su1"><br> 수 2 : <input name="su2"><br>
+		<input type="button" value="계산해줘" onclick="send(this.form);">
+
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 연산자/제어문은 자바와 거의 동일하다  -->
+
+<script type="text/javascript">
+   
+   var a = 10;
+   var b = 3;
+   
+   var mok = Math.floor(a / b);
+   var remain = a % b;
+   document.write("mok=" + mok + "<br>");
+   document.write("remain=" + remain + "<br>");
+   
+   var res = a << 2;
+   document.write("10<<2=" + res +"<br>");
+   
+   var year = 2020;
+   //            조건1    이거나   조건2 
+   var bOk = (year%400==0)  ||  (year%4==0 && year%100!=0);
+   document.write(year +"년도는 " + ( bOk ? "윤년":"평년") + "<br>");
+   document.write("---제어문:if,for,while,do~while------------<br>")
+   
+   
+   for(var i=1;i<=10;i++){
+	   if(i%2==1){//홀수면 Red
+	      document.write("<font color=red>");
+	   }else{     //짝수면 Blue
+	   	  document.write("<font color=blue>");
+	   }
+	   
+	   document.write(i + "<br>");
+	   document.write("</font>")
+   }
+   
+   
+   
+   
+   function gugudan(){
+	   
+	 //입력창에서 입력값 얻기
+	   var dan = window.prompt("단?:");
+	   if(dan==null){
+		   alert('값을 입력하세요');
+		   return;
+	   }
+	   //console.log(dan);
+	   if(dan<2 || dan > 9 ){
+		   alert('2~9사이값을 입력하세요!!');	
+		   return;
+	   }
+	   
+	   var str = "<table border='1'>";
+	   str = str + "<tr><th>" + dan +"단</th></tr>";
+	   for(var i=1;i<=9;i++){
+		   str = str + ("<tr><td>");
+		   str = str + (dan + "x" + i + "=" + (dan*i));
+		   str = str + ("</td></tr>");
+	   }
+	   str = str + ("</table>");
+	   
+	   document.write(str);
+	   
+   }
+   
+   //구구단 호출
+   gugudan(); 
+   
+   
+   
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+ul#main_menu {
+	list-style: none;
+}
+
+ul#main_menu li{
+	display: inline-block; /* 가로배치 */
+	width: 160px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+ul#main_menu li a{
+	/* block요소는 크기설정가능 */
+	display: block; /* inline->block */
+	width: 160px;
+	/* border: 1px solid #0080c0; */
+	text-align: center;
+	text-decoration: none;
+	font-size : 16pt;
+	font-weight: bold;
+	color:#0080c0;
+}
+
+
+ul#main_menu li a:hover{
+	color: red;	
+}
+

@@ -1,0 +1,121 @@
+package action;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MemberRegisterAction
+ */
+@WebServlet("/member_register.do")
+public class MemberRegisterAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		// /member_register.do?name=홍길동&id=hong&pwd=11234&
+		// gender=남자&
+		// hobby=독서&hobby=운동&
+		// friend=&friend=&friend=&
+		// blood=A&profile=aaa
+
+		// friend=&friend=&friend=
+
+		// 수신 인코딩 설정: 클라이언트측 인코딩과 일치시켜라
+		// 이유: 한글/특수문자이 깨짐현상
+		request.setCharacterEncoding("utf-8");
+
+		PrintWriter out = response.getWriter();
+
+		// 파라메터 수신
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String gender = request.getParameter("gender");
+		String blood = request.getParameter("blood");
+		String profile = request.getParameter("profile");
+
+		// 동일한 parameter명이 여러개 있는경우 배열로 받는다
+		String[] hobby_array = request.getParameterValues("hobby");
+		// 취미항목은 체크하지 않으면 안넘어온다 => 배열은 null
+		String hobby_list = "취미없음";
+		StringBuffer sb = new StringBuffer();
+
+		if (hobby_array != null) {
+			// String [] hobby_array = {"독서","운동"};
+			for (String hobby : hobby_array) {
+				sb.append(hobby);
+				sb.append(" ");
+			}
+			// sb = "독서 운동 " <=sb 내용
+			// StringBuffer에 누적된 문자열을 옮겨놓는다
+			hobby_list = sb.toString().trim();
+		}
+
+		String[] blood_array = request.getParameterValues("blood");
+		// 취미항목은 체크하지 않으면 안넘어온다 => 배열은 null
+		String blood_list = "";
+		StringBuffer sb2 = new StringBuffer();
+
+		if (blood_array != null) {
+			for (String blood : blood_array) {
+				sb.append(blood);
+			}
+			// sb = "독서 운동 " <=sb 내용
+			// StringBuffer에 누적된 문자열을 옮겨놓는다
+			blood_list = sb.toString().trim();
+		}
+
+		// 값의 여부와 상관없이 무조건 들어온다(무조건 배열 3개)
+		String[] friend_array = request.getParameterValues("friend");
+
+		// String [] friend_array = {"","",""};
+		// String [] friend_array = {"일친구","이친구",""};
+
+		StringBuffer sb1 = new StringBuffer();
+		for (String friend : friend_array) {
+			sb1.append(friend);
+			sb1.append(" ");
+		}
+
+		// sb1 = ""; <=친구없는경우
+		// sb1 = "일친구 이친구";
+
+		String friend_list = "친구없음";
+
+		// 비어있지 않으면
+		if (sb1.toString().trim().isEmpty() == false) {
+			friend_list = sb1.toString().trim();
+		}
+
+		out.println("<html>");
+		out.println("<head><meta charset=\"UTF-8\"><title>자기소개</title></head>");
+		out.println("<body><center>");
+		out.println("<table border=\"1\" cellspacing=\"0\" width=\"400\">");
+		out.println(" <caption>::::자기소개::::</caption>");
+		out.println("<tr><td>이름</td><td></td> </tr>");
+		out.println("<tr><td>아이디</td><td></td> </tr>");
+		out.println("<tr><td>비밀번호</td><td></td> </tr>");
+		out.println("<tr><td>성별</td><td></td> </tr>");
+		out.println("<tr><td>혈액형</td><td></td> </tr>");
+		out.println("<tr><td>취미</td><td></td> </tr>");
+		out.println("<tr><td>친구</td><td></td> </tr>");
+		out.println("<tr><td>자기소개</td><td></td> </tr>");
+		out.println("</table>");
+		out.println("</body>");
+		out.println("</html>");
+
+	}
+
+}

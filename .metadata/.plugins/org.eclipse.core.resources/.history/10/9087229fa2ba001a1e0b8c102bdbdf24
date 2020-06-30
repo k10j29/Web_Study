@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function send(f) {
+
+		//입력여부 체크(주민번호 정규식 이용)
+		var jumin_no = f.jumin_no.value.trim();
+
+		var name = f.name.value.trim();
+		var id = f.id.value.trim();
+		var pwd = f.pwd.value.trim();
+		var profile = f.profile.value.trim();
+
+		//이름이 비어있으면
+		if (name == '') {
+			alert('이름을 입력하세요');
+			f.name.value = '';//값비우기
+			f.name.focus(); //포커스지정
+			return;
+		}
+
+		if (id == '') {
+			alert('아이디를 입력하세요');
+			f.id.value = '';//값비우기
+			f.id.focus(); //포커스지정
+			return;
+		}
+
+		if (pwd == '') {
+			alert('비밀번호를 입력하세요');
+			f.pwd.value = '';//값비우기
+			f.pwd.focus(); //포커스지정
+			return;
+		}
+
+		if (profile == '') {
+			alert('자기소개를 입력하세요');
+			f.profile.value = '';//값비우기
+			f.profile.focus(); //포커스지정
+			return;
+		}
+
+		f.action = "jumin.do"; // MemberRegisterAction
+
+		//f.method = "POST";//생략시 기본값 GET
+
+		//<form>요소의 모든항목을 전송한다
+		f.submit();//<form> : submit()
+
+	}
+
+		//맞으면 전송
+		f.action = "jumin.do"; //JuminAction
+		f.method = "GET";
+		f.submit();//전송
+
+	}
+</script>
+
+</head>
+<body>
+
+	<form>
+		주민번호:<input name="jumin_no" value="801212-1234560"> <input
+			type="button" value="확인" onclick="send(this.form);">
+	</form>
+
+</body>
+</html>

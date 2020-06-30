@@ -1,0 +1,76 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MemberRegisterAction
+ */
+@WebServlet("/member_register.do")
+public class MemberRegisterAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		// /member_register.do?name=홍길동&id=hong&pwd=11234&
+		// gender=남자&
+		// hobby=독서&hobby=운동&
+		// friend=&friend=&friend=&
+		// blood=A&profile=aaa
+
+		// friend=&friend=&friend=
+
+		// 수신 인코딩 설정: 클라이언트측 인코딩과 일치시켜라
+		// 이유: 한글/특수문자이 깨짐현상
+		request.setCharacterEncoding("utf-8");
+
+		// 파라메터 수신
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		String gender = request.getParameter("gender");
+		String profile = request.getParameter("profile");
+
+		// 동일한 parameter명이 여러개 있는경우 배열로 받는다
+		String[] hobby_array = request.getParameterValues("hobby");
+
+		String hobby_list = "취미 없음";
+		StringBuffer sb = new StringBuffer();
+		if (hobby_array != null) {
+			// String[] hobby_array = {"독서", "운동"};
+
+			for (String hobby : hobby_array) {
+				sb.append(hobby);
+				sb.append("");
+
+			}
+			// String Buffer 에 누적된 문자열을 옮겨놓는다.
+			hobby_list = sb.toString().trim();
+		}
+
+		String[] friend_array = request.getParameterValues("friend");
+		// 값의 여부와 상관없이 무조건 들어옴 (무조건 배열 3개짜리)
+		// String[] friend_array = {"","",""};
+		// String[] friend_array = {"","",""};
+
+		StringBuffer sb1 = new StringBuffer();
+
+		for (String friend : friend_array) {
+
+			sb.append(friend);
+			sb.append("");
+		}
+	}
+
+}

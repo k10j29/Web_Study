@@ -1,0 +1,16 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+	
+</SCRIPT>
+</HEAD>
+<BODY>
+	<FORM>
+		<H3>주민등록 번호를 입력해 주세요.</H3>
+		<FORM>
+			주민등록 번호: <INPUT NAME="c1" SIZE="10" MAXLENGTH="6"> - <INPUT
+				NAME="c2" SIZE="10" MAXLENGTH="7"> <INPUT TYPE="button"
+				VALUE="검사 시작" onclick="c_check(this.form)">
+		</FORM>
+</BODY>
+</HTML>

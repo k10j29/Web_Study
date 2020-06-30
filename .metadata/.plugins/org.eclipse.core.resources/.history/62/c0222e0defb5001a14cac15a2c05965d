@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://code.jquery.com/jquery-1.12.4.js"
+
+	
+	
+	</script>
+</head>
+<body>
+
+애국가 선택 = <select id = "song">
+
+<option value="s">애국가를 선택하세요 </option>
+<option value="s1">1절 </option>
+<option value="s2">2절 </option>
+<option value="s3">3절 </option>
+<option value="s4">4절 </option>
+
+</select>
+
+<hr>
+<div id = "disp"> </div>
+
+
+</select>
+
+</body>
+</html>

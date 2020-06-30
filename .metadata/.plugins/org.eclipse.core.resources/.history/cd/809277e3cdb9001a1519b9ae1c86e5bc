@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="calc.do">
+		수 1 : <input name="su1"><br> 수 2 : <input name="su1">
+		<br> <input type="button" value="계산해줘">
+
+
+	</form>
+
+</body>
+</html>

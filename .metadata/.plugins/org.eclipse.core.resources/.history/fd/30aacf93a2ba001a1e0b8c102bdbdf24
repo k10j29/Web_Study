@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function send(f) {
+
+		//입력여부 체크(주민번호 정규식 이용)
+		var jumin_no = f.jumin_no.value.trim();
+
+		//1.체크
+
+		//맞으면 전송
+		f.action = "jumin.do"; //JuminAction
+		f.method = "GET";
+		f.submit();//전송
+
+	}
+</script>
+
+</head>
+<body>
+
+	<form>
+		주민번호:<input name="jumin_no" value="801212-1234560"> <input
+			type="button" value="확인" onclick="send(this.form);">
+	</form>
+
+</body>
+</html>

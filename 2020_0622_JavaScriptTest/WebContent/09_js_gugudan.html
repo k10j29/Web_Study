@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  #disp{
+      width:  150px;
+      height: 250px;
+      background-color: black;
+      color: white;
+      padding: 30px;
+  }
+</style>
+
+<script type="text/javascript">
+
+  function show_result(){
+	  //입력값 읽어오기
+	  var dan = document.getElementById("dan").value;
+	  
+	  //2~9사이를 체크하는 정규식 생성->체크함
+	  var regular_dan = /^[2-9]{1}$/;
+	  
+	  if(regular_dan.test(dan)==false){
+		  alert("2~9사이 값을 입력하세요");
+		  document.getElementById("dan").value='';
+		  document.getElementById("dan").focus();
+		  return;
+	  }
+	  
+	  
+	  
+	  //구구단 생성
+	  var str = "---" + dan + "단 보기---<br><br>";
+	  for(var i=1;i<=9;i++){
+		  str = str + (dan + "x" + i + "=" + dan*i +"<br>");
+	  }
+	  
+	  //id=disp 컨트롤 정보 구하기
+	  var disp_ctrl = document.getElementById("disp");
+	  // <div id="disp">값(innerHTML)</div>
+	  disp_ctrl.innerHTML = str;
+	  
+  }
+
+</script>
+
+
+</head>
+<body>
+
+단:<input id="dan">
+   <input type="button"  value="결과보기"  onclick="show_result();">
+<hr>
+<div id="disp"></div>   
+
+
+</body>
+</html>

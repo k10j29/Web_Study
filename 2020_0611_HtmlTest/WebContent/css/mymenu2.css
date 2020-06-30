@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+ul.submenu_style, 
+ul.submenu_style  ul {
+	list-style: none;
+}
+
+/*
+부모요소 > 자식요소 : 바로아래자식만 적용
+부모요소 자식요소   : 하위요소 모두 적용
+*/
+ul.submenu_style li{
+	
+	width: 120px;
+	margin-top: 30px;/* 상하간격 */
+}
+
+ul.submenu_style  li  a{
+	display: block;
+	width: 120px;
+	border: 1px solid blue;
+	text-decoration: none;
+	text-align: center;
+	color: #0080c0;	
+}
+
+/* 마우스가 올라가면 */
+ul.submenu_style  li  a:hover{
+	border: 1px solid red;
+	color: red;
+	box-shadow: 1px 1px 3px black;
+}
+
+

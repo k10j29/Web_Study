@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	//javascript 정규식, 코드
+	var regular_num = /^[0-9]{1,5}$/;
+
+	function send(f) {
+
+		var su1 = f.su1.value.trim();
+		var su2 = f.su2.value.trim();
+
+		//정규식 패턴과 일치 하냐? (불일치 하면 false)
+		if (regular_num.test(su1) == false) {
+
+			alert('1~5자리의 숫자만 입력하세요')
+			f.su1.value = '';
+			f.su1.focus();
+			return;
+		}
+
+		if (regular_num.test(su2) == false) {
+
+			alert('1~5자리의 숫자만 입력하세요')
+			f.su2.value = '';
+			f.su2.focus();
+			return;
+		}
+
+		//지정된  Action 으로 데이터 전송  action="calc.do"
+		f.submit();
+
+	}
+</script>
+</head>
+<body>
+
+	<form action="calc.do">
+		수 1 : <input name="su1"><br> 수 2 : <input name="su2"><br>
+		<input type="button" value="계산해줘" onclick="send(this.form);">
+
+
+	</form>
+
+</body>
+</html>

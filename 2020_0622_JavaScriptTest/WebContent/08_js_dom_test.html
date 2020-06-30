@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript"  src="js/myregular.js"></script>
+<script type="text/javascript">
+	/* 
+	  DOM(Document Object Model)
+	  
+    */
+	//정규식(regular expression)
+	// ^    : 시작문자     ^[ABC]
+	//       [^A] => A가 아닌문자(Not)
+	// $    : 끝나는문자   ABC$
+	// {n}  : n자리
+	// {n,} : n자리 이상
+	// {n,m}: n~m자리
+	// ?    : 0 or 1
+	// +    : 1...n
+	// *    : 0...n
+    //var regular_su = /^[0-9]{1,3}$/; //0~999
+    
+	function add(){
+		//id를 이용해서 컨트롤(Element)정보 구하기
+		var su1_ctrl    = document.getElementById("su1");
+		var su2_ctrl    = document.getElementById("su2");
+		var result_ctrl = document.getElementById("result");
+		//컨트롤의 값 구하기
+		var su1 = su1_ctrl.value;
+		var su2 = su2_ctrl.value;
+		
+		//if(su1==''){
+		if(regular_su.test(su1)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su1_ctrl.value='';//이전값 비우기
+			su1_ctrl.focus();
+			return;
+		}
+		
+		if(regular_su.test(su2)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su2_ctrl.value='';//이전값 비우기
+			su2_ctrl.focus();
+			return;
+		}
+		
+		//계산
+		//var result = su1 + su2;//문자열상태로 + 계산
+		var result = parseInt(su1) + parseInt(su2);// 정수 + 정수
+		
+		//계산결과를 결과창에 넣기
+		result_ctrl.value = result;
+	}
+		
+	function divide(){
+		//id를 이용해서 컨트롤(Element)정보 구하기
+		var su1_ctrl    = document.getElementById("su1");
+		var su2_ctrl    = document.getElementById("su2");
+		var result_ctrl = document.getElementById("result");
+		//컨트롤의 값 구하기
+		var su1 = su1_ctrl.value;
+		var su2 = su2_ctrl.value;
+		
+		//if(su1==''){
+		if(regular_su.test(su1)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su1_ctrl.value='';//이전값 비우기
+			su1_ctrl.focus();
+			return;
+		}
+		
+		if(regular_su.test(su2)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su2_ctrl.value='';//이전값 비우기
+			su2_ctrl.focus();
+			return;
+		}
+		
+		//젯수가 0 이면
+		if(parseInt(su2)==0){
+		    alert('0으로는 나눌수 없습니다');
+			return;
+		}
+		
+		
+		//계산
+		var result = Math.floor(parseInt(su1) / parseInt(su2));
+		
+		//계산결과를 결과창에 넣기
+		result_ctrl.value = result;
+	}
+		
+	function remain(){
+		//id를 이용해서 컨트롤(Element)정보 구하기
+		var su1_ctrl    = document.getElementById("su1");
+		var su2_ctrl    = document.getElementById("su2");
+		var result_ctrl = document.getElementById("result");
+		//컨트롤의 값 구하기
+		var su1 = su1_ctrl.value;
+		var su2 = su2_ctrl.value;
+		
+		//if(su1==''){
+		if(regular_su.test(su1)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su1_ctrl.value='';//이전값 비우기
+			su1_ctrl.focus();
+			return;
+		}
+		
+		if(regular_su.test(su2)==false){	
+			alert('1~3자리의 숫자만 입력하세요!!');
+			su2_ctrl.value='';//이전값 비우기
+			su2_ctrl.focus();
+			return;
+		}
+		
+		//젯수가 0 이면
+		if(parseInt(su2)==0){
+		    alert('0으로는 나눌수 없습니다');
+			return;
+		}
+		
+		
+		//계산
+		var result = parseInt(su1) % parseInt(su2);
+		
+		//계산결과를 결과창에 넣기
+		result_ctrl.value = result;
+	}
+
+</script>
+</head>
+<body>
+  <!--
+      name : server로 전송되는 값(form과 관련)
+      id   : server와 무관함
+             client(browser내)에서 활용할 목적
+   --> 
+  수1:<input type="text" name="su1" id="su1" value=""><br>
+  수2:<input type="text" id="su2"><br>
+      <input type="button"  value="+" onclick="add();">
+      <input type="button"  value="-" onclick="minus();">
+      <input type="button"  value="*" onclick="multiply();">
+      <input type="button"  value="/(몫)" onclick="divide();">
+      <input type="button"  value="%(나머지)" onclick="remain();"><br>
+      
+  결과:<input type="text" id="result">
+  
+  
+</body>
+</html>
+
+
+
+
+
+
+
+

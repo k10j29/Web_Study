@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!--
+   자바스크립트 자료형
+   1.숫자형 : Number
+   2.문자형 : string
+   3.날짜형 : Date
+   4.기타   : Math
+   
+  -->
+  
+<script type="text/javascript">
+  /*  자바스크립트 변수선언 */
+  // Number a;(X)
+  //전역변수
+  var a;
+  var global_c;
+    
+  function test(){
+	  //함수내에서 var붙이면(지역변수)
+	  //그냥변수 선언또는 사용하면 전역변수
+	  var local_a;
+	      
+	  local_a = 10;
+	  global_b = 100;
+  }
+  
+  test();//함수를 호출해야 내부전역변수가 생성된다
+  
+  //Brower body에 내용을 출력
+  //document.write(local_a);//지역변수
+  document.write(global_b);
+  
+  //값이 대입될때 자료형 변경된다
+  var s = 10; //Number형
+  //자바스크립트에서 문자열 표현 :  ''  or  ""
+  s = '안녕'; //string형
+  s = new Date();//Date형 
+  
+  
+  //자바스크립에서 타이머 사용
+  //cf)  var timer = setTimeout("함수",호출간격);//딱 1회만 호출
+  //                                   1/1000초
+  //     setInterval() : 지속적으로 호출           
+  var timer = setInterval("timer_procedure();",1000);
+    
+  function timer_procedure(){
+	  //console.log("---");
+	  //현재 시스템 날짜 구하기
+	  var today  = new Date();//현재 시스템 날짜 구함
+	  var hour   = today.getHours();  //시간 
+	  var minute = today.getMinutes();//분
+	  var second = today.getSeconds();//초
+	  
+	  var str_time = hour + " : " + minute + " : " + second;
+	  document.title = str_time;
+	  
+  }
+  
+
+
+</script>  
+
+
+</head>
+<body>
+
+</body>
+</html>

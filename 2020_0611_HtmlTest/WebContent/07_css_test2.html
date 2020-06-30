@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- CSS : selector지정방법 -->
+<style type="text/css">
+   p{ 
+        width: 200px;
+        height: 50px;
+        border: 1px solid gray; 
+        color: red;
+    }
+    /* id selector : #id */
+    p#p2 { color:blue; }
+    /* class selector : .class_name */
+    .p_style { color: green; }
+    
+    /* 각 Element(요소)의 속성을 이용한 selector */
+    input {
+      border: 1px solid blue;
+      height: 30px;
+    }
+    
+    /* Element[Attribute] */
+    input[type='text']{
+      border: 1px solid red;      
+    }
+    
+    input[value='클릭']{
+    	background-color: black;
+    	color: white;
+    }
+    
+    /* group(multi) selector */
+    p#p6 , div#d1 {
+      font-size: 20pt;
+      font-weight: bold;
+      font-family: 궁서체,휴먼옛체,굴림체;
+    }
+
+</style>
+
+</head>
+<body>
+<p>p tag 1</p>
+<p id="p2">p tag 2</p>
+<p style="color: orange;">p tag 3</p>
+<p class="p_style">p tag 4</p>
+<p class="p_style">p tag 5</p>
+<p class="p_style">p tag 6</p>
+
+<p   id="p6">한글 p tag 6</p>
+<div id="d1">한글 div id=d1</div>
+
+
+<input type="text"    name="id">
+<input type="button"  value="클릭">
+
+
+
+
+</body>
+</html>

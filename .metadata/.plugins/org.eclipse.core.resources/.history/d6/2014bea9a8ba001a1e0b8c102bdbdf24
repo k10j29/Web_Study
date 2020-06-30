@@ -1,0 +1,55 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation classO MemberRegisterAction
+ */
+
+@WebServlet("/jumin.do")
+public class JuminCheckAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+
+		// 파라메터 수신
+		String jumin_no = request.getParameter("jumin_no");
+
+		// 응답처리
+		// 응답시 mime-type 및 인코딩 지정
+		response.setContentType("text/html; charset=utf-8;");
+		StringBuffer html = new StringBuffer();
+
+		html.append("<html>");
+		html.append("<head></head>");
+		html.append("<body>");
+
+		html.append("<tr><th>이름</th><td>");
+		html.append(jumin_no);
+		html.append("</td></tr>");
+
+		html.append("<tr><td colspan='2' align='center'>");
+		html.append("<a href='jumin.html'>다시확인</a></td></tr>");
+
+		html.append("</body>");
+		html.append("</html>");
+
+		// 동적으로 작성된 html 전송
+		response.getWriter().println(html.toString());
+
+	}
+
+}

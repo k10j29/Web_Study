@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+ul.submenu_style {
+	list-style: none;
+	
+}
+
+ul.submenu_style  li{
+	
+	margin-top: 50px;
+	width: 120px;
+}
+
+
+ul.submenu_style  li a{
+	display: block;
+	width: 120px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #004080;
+}
+
+ul.submenu_style  li a:hover{
+    color: red;	
+}
+
+
+
+

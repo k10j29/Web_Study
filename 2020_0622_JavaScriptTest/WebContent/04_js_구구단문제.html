@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+  var str = "<table border='1'>"
+  
+  for(var i=0;i<=9;i++){ //행(아래)
+	  //1줄
+	  str = str +"<tr>";
+	  for(var dan=2;dan<=9;dan++){//열(우측)
+		  //1칸
+		  
+		  if(i==0){//제목채우기
+			 str = str +"<th>"; 
+			 str = str + (dan+"단");
+			 str = str +"</th>";
+		  }else{
+			 str = str +"<td>";
+		     str = str + (dan + "x" + i + "=" + dan*i);
+		     str = str +"</td>";
+		  }
+	  }//dan : end-for
+	  
+	  str = str +"</tr>";
+  }//i : end-for
+  str = str + "</table>";
+  
+  document.write(str);
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

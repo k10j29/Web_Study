@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  //자바스크립트 배열
+  //                   0       1      2      3
+  var sido_array = [ "서울","경기","인천","대전"];
+  
+  //배열갯수
+  document.write(sido_array.length + "<br>");
+  document.write("sido_array[0]=" +sido_array[0] + "<br>");
+
+  for(var i=0;i<sido_array.length;i++){//i = 0 1 2 3
+	  document.write( i +":"+sido_array[i] + "<br>");
+  }
+
+  //배열객체 생성
+  var fruit_array = new Array();
+  fruit_array[0] = "사과";
+  fruit_array[1] = "참외";
+  fruit_array[2] = "수박";
+  
+  document.write("fruit_array.length = " + fruit_array.length+"<br>");
+  
+  //2차원 배열
+  var array2 = [
+	             //0 1 2  <=열첨자
+	              [1,2,3], //0
+	              [4,5,6], //1   <=행첨자
+	              [7,8,9]  //2
+	           ];
+  
+  document.write(array2[1][1]+"<br>");  
+  
+  document.write(array2[0].length +"<br>");
+  
+  for(var i=0;i< array2.length;i++){        //행첨자
+	   
+	  for(var k=0;k<array2[i].length;k++){  //열첨자
+		  
+		  document.write(array2[i][k]);  
+	  }
+	  
+	  document.write("<br>");
+	  
+  }
+
+  
+  
+  
+</script>
+</head>
+<body>
+
+</body>
+</html>

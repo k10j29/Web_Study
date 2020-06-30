@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="lifecycle.do">
+		<input type="button" value="get 방식" onclick="send_get(this.form);">
+		<input type="button" value="post 방식" onclick="send_post(this.form);">
+
+
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- Javascript를 이용하는 방식 
+     1.inline방식
+     2.선언적방식
+     3.외부화일 참조방식
+-->
+
+<!-- 외부화일 연결 -->
+<script type="text/javascript"  src="js/myscript.js" ></script>
+
+<!-- 선언적 방식  -->
+<script type="text/javascript">
+	/* 함수선언 : 자바의 메소드 */
+	function call_click()  
+	{
+	   window.alert("선언적방식 클릭");	
+	}
+</script>
+
+
+</head>
+<body>
+<!-- inline방식 -->
+<input type="button"  value="클릭(인라인방식)"
+       onclick="javascript:window.alert('인라인방식 클릭');">
+<br>
+<input type="button" value="클릭(선언적방식)"
+       onclick="javascript:call_click();" >   
+       
+<br>
+<input type="button" value="클릭(외부화일참조방식)"
+       onclick="javascript:call_click2();" >            
+       
+  
+
+
+
+
+</body>
+</html>

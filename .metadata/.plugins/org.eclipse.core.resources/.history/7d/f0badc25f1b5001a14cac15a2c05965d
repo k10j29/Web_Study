@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  #disp{
+       width: 200px;
+       height: 200px;
+       padding: 50px;
+       background-color: black;
+       color:yellow;
+  }
+</style>
+<script	src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+  //jQuery초기화
+  $(document).ready(function(){
+	  
+	  //select change event
+	  $("#song").change(function(){
+		  
+		  var song_val = $(this).val();
+		  console.log(song_val);
+		  
+		  if(song_val =="s1") {
+			  
+			  
+		  }
+		  
+		  
+		  
+	  });
+	  
+	  
+  });
+
+</script>	
+</head>
+<body>
+
+애국가선택: <select id="song">
+                <option value="">::::선택하세요::::</option>
+                <option value="s1">애국가 1절</option>
+                <option value="s2">애국가 2절</option>
+                <option value="s3">애국가 3절</option>
+                <option value="s4">애국가 4절</option>
+			</select>
+<hr>
+<div id="disp">여기에 애국가 출력</div>
+
+
+</body>
+</html>
