@@ -250,3 +250,6 @@
 0:0:0:0:0:0:0:1 - - [30/Jun/2020:17:28:10 +0900] "GET /2020_0630_ServletParameter/jumins.html HTTP/1.1" 404 849
 0:0:0:0:0:0:0:1 - - [30/Jun/2020:17:28:11 +0900] "GET /2020_0630_ServletParameter/jumins.html HTTP/1.1" 404 849
 0:0:0:0:0:0:0:1 - - [30/Jun/2020:17:28:11 +0900] "GET /2020_0630_ServletParameter/jumins.html HTTP/1.1" 404 849
+127.0.0.1 - - [30/Jun/2020:17:28:21 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:17:28:23 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:17:28:23 +0900] "GET /2020_0630_ServletParameter/jumin.do?jumin_no=801212-1234560 HTTP/1.1" 200 382
