@@ -4,7 +4,7 @@
   JAVA_HOME=c:\Program files\Java\....
 
 2.톰캣설치경로 등록
-  CATALINA_HOEM=C:\apache-tomcat-8.5.56
+  CATALINA_HOME=C:\apache-tomcat-8.5.56
 
 ##[오라클 web 포트변경]
  1)sqlplus system/oracle  

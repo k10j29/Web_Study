@@ -1,0 +1,8 @@
+EL  & JSTL사용
+
+JSTL을 사용하려면 
+  C:\apache-tomcat-8.5.56\webapps\examples\WEB-INF\lib
+  경로 밑에 있는 화일 2개
+  1)taglibs-standard-impl-1.2.5.jar
+  2)taglibs-standard-spec-1.2.5.jar
+  C:\apache-tomcat-8.5.56\lib폴더에 복사한다
