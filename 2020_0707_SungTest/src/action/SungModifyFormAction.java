@@ -1,7 +1,6 @@
 package action;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,6 +26,15 @@ public class SungModifyFormAction extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// /sung/modify_form.do?no=10
+
+		// 수정할 번호 받기
+		int no = Integer.parseInt(request.getParameter("no"));
+
+		// no에 해당되는 성적정보 1건 얻어오기
+		SungVo vo = SungTBDao.getInstance().selectOne(no);
+
+		// request binding
+		request.setAttribute("vo", vo);
 
 		// Dispatcher(forward)
 		String forward_page = "sung_modify_form.jsp";

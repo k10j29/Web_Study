@@ -26,15 +26,28 @@ insert into visit values(seq_visit_idx.nextVal,
                          '1234',
                          '127.0.0.1',
                          sysdate );
-                         
+
 insert into visit values(seq_visit_idx.nextVal,
                          '이길동',
-                         '아쉽게 2등이야~~',
+                         '아쉽네 2등했네',
                          '1234',
                          '127.0.0.1',
                          sysdate );
-                         
-select * from visit order by idx desc
+ 
+--update : where절생략시 모든행 처리
+
+update visit  
+         set name   ='이준기',
+             content='~~~',
+             pwd='1111',
+             ip='192.168.0.222',
+             regdate=sysdate
+where idx=7
+                                                                                                    
+                                                                                                                                                    
+select * from visit  order by idx desc
+
+rollback
 
 commit
                                               

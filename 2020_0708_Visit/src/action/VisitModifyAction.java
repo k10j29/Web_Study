@@ -1,7 +1,7 @@
 package action;
 
 import java.io.IOException;
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,22 +24,30 @@ public class VisitModifyAction extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// /visit/modify.do?idx=7&name=이준기&content=~~~&pwd=1111
 
-		// 1. 수신 인코딩 설정
-		// sung_insert_form.jsp (보내는쪽) 하고 맞춰주기
-		request.setCharacterEncoding("UTF-8");
+		// 1.수신인코딩 설정
+		request.setCharacterEncoding("utf-8");
 
-		// 2. 파라미터 받기
+		// 2.parameter 수신
 		int idx = Integer.parseInt(request.getParameter("idx"));
+		String name = request.getParameter("name");
 		String content = request.getParameter("content");
+		String pwd = request.getParameter("pwd");
 
-		// 3. 포장하기
-		VisitVo vo = new VisitVo(idx, content);
+		String ip = request.getRemoteAddr();
 
-		// 4. DB update
+		// content : \n -> <br>
+		content = content.replaceAll("\n", "<br>");
+
+		// 3.Vo포장
+		VisitVo vo = new VisitVo(idx, name, content, pwd, ip);
+
+		// 4.DB update
 		int res = VisitDao.getInstance().update(vo);
 
-		// 5. 목록 보기이동
+		// 5.목록보기
 		response.sendRedirect("list.do");
 
 	}

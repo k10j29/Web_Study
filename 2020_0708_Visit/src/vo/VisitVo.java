@@ -40,10 +40,13 @@ public class VisitVo {
 		this.ip = ip;
 	}
 
-	public VisitVo(int idx, String content) {
+	public VisitVo(int idx, String content, String pwd, String name) {
 		super();
 		this.idx = idx;
 		this.content = content;
+		this.name = name;
+		this.pwd = pwd;
+
 	}
 
 	public int getIdx() {

@@ -28,16 +28,15 @@ public class VisitListAction extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		// 2. 목록 가져오기 (위치중요)
+		// 1.Data가져오기
 		List<VisitVo> list = VisitDao.getInstance().selectList();
 
-		// 3. Request binding (여기까지 하고 실행시 404오류)
+		// 2.request binding
 		request.setAttribute("list", list);
 
-		// Dispatcher (forward)
+		// Dispatcher(forward)
 		String forward_page = "visit_list.jsp";
 		RequestDispatcher disp = request.getRequestDispatcher(forward_page);
-
 		disp.forward(request, response);
 
 	}

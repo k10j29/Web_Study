@@ -67,12 +67,12 @@
 			return;
 		}
 
-		//최종삭제확인
-
-		if (confirm("정말 삭제할래?") == false)
+		//최종 삭제 확인    
+		if (confirm("정말 삭제 하시겠습니까?") == false)
 			return;
 
 		//방법1) 자바스크립트 이용한 전송
+		//             VisitDeleteAction  
 		location.href = "delete.do?idx=" + f.idx.value;
 
 		//방법2) form data 전송
@@ -80,8 +80,7 @@
 		//f.submit();
 
 	}
-
-	function modi(f) {
+	function modify_form(f) {
 
 		var pwd = f.pwd.value;//원래비번
 		var c_pwd = f.c_pwd.value.trim();//사용자 입력 비번
@@ -101,19 +100,12 @@
 			return;
 		}
 
-		//최종삭제확인
-
-		if (confirm("수정하시겠습니까?") == false)
-			return;
-
 		//방법1) 자바스크립트 이용한 전송
+		//             VisitModifyFormAction  
 		location.href = "modify_form.do?idx=" + f.idx.value;
-		
-		
 
 	}
 </script>
-
 
 </head>
 <body>
@@ -135,18 +127,16 @@
 		</c:if>
 
 
-		<!-- 데이터가 있는경우 -->
-		<!-- for 문이 도는것과 동일 -->
-
+		<!-- 데이터가 있는 경우 -->
+		<!--  for(VisitVo vo : list) 동일 -->
 		<c:forEach var="vo" items="${ list }">
-			<div class="panel panel-success class">
+			<div class="panel panel-success">
 				<!-- 작성자(IP) 작성일자 -->
 				<div class="panel-heading">
-					${ vo.name }(${ vo.ip }) <br> ${ fn:substring(vo.regdate,0,16) }
+					<h4>
+						${ vo.name }(${ vo.ip })<br> ${ fn:substring(vo.regdate,0,16) }
+					</h4>
 				</div>
-
-
-
 				<!-- 
 	           내용
 	           비번      수정  삭제
@@ -158,22 +148,17 @@
 						<input type="hidden" name="idx" value="${ vo.idx }"> <input
 							type="hidden" name="pwd" value="${ vo.pwd }">
 						<div>
-							비밀번호(${ vo.pwd }):<input type="password" name="c_pwd"> 
-							
-							
-							<input class="btn btn-info" type="button" value="수정"
-								onclick="modi(this.form);" >
-								
-								
-								<input class="btn btn-danger" type="button" value="삭제"
+							비밀번호(${ vo.pwd }):<input type="password" name="c_pwd"> <input
+								class="btn btn-info" type="button" value="수정"
+								onclick="modify_form(this.form);"> <input
+								class="btn btn-danger" type="button" value="삭제"
 								onclick="del(this.form);">
-
-
-
 						</div>
 					</form>
+
 				</div>
 			</div>
+
 		</c:forEach>
 	</div>
 
