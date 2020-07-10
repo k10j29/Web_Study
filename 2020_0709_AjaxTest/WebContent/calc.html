@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Ajax기능을 사용하려면... -->
+<script type="text/javascript" src="js/httpRequest.js"></script>
+
+<script type="text/javascript">
+	var regular_num = /^[0-9]{1,5}$/;
+
+	function send_calc() {
+
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+
+		if (regular_num.test(su1) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			document.getElementById("su1").value = '';
+			document.getElementById("su1").focus();
+			return;
+		}
+
+		if (regular_num.test(su2) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			document.getElementById("su2").value = '';
+			document.getElementById("su2").focus();
+			return;
+		}
+
+		var url = "calc.do";
+		var param = "su1=" + su1 + "&su2=" + su2;
+		//GET : calc.do?su1=10&su2=6
+
+		//Ajax로 전송
+		sendRequest(url, param, resultFn, "GET");
+
+	}
+
+	//Ajax 요청에 대한 결과 수신 함수
+	function resultFn() {
+
+		console.log("readyState=" + xhr.readyState + "  status=" + xhr.status);
+		if (xhr.readyState == 4 && xhr.status == 200) {
+
+			var data = xhr.responseText;
+			//alert(data);
+
+			//수신결과를 <div id="disp"></div>에 넣는다
+			document.getElementById("disp").innerHTML = data;
+
+		}
+
+	}
+</script>
+s
+
+</head>
+<body>
+
+
+	수1:
+	<input id="su1">
+	<br> 수2:
+	<input id="su2">
+	<br>
+	<input type="button" value="계산해줘" onclick="send_calc();">
+	<hr>
+	<div id="disp"></div>
+
+
+</body>
+</html>

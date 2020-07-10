@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- jQuery사용하려면... -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+
+<script type="text/javascript">
+	var regular_num = /^[0-9]{1,5}$/;
+
+	function send_calc() {
+
+		var su1 = $("#su1").val();//document.getElementById("su1").value;
+		var su2 = $("#su2").val();//document.getElementById("su2").value;
+
+		if (regular_num.test(su1) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			$("#su1").val("");//document.getElementById("su1").value='';
+			$("#su1").focus();//document.getElementById("su1").focus();
+			return;
+		}
+
+		if (regular_num.test(su2) == false) {
+			alert("1~5자리 숫자만 입력하세요");
+			$("#su2").val("");//document.getElementById("su2").value='';
+			$("#su2").focus();//document.getElementById("su2").focus();
+			return;
+		}
+
+		//jQuery를 이용한 Ajax통신		  
+		$.ajax({
+			url : 'calc.do',
+			data : {
+				"su1" : su1,
+				"su2" : su2
+			},
+			success : function(res_data) {
+
+				$("#disp").html(res_data);
+
+			}
+		});
+
+	}
+</script>
+
+
+</head>
+<body>
+
+
+	수1:
+	<input id="su1">
+	<br> 수2:
+	<input id="su2">
+	<br>
+	<input type="button" value="계산해줘" onclick="send_calc();">
+	<hr>
+	<div id="disp"></div>
+
+
+</body>
+</html>
