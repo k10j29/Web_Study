@@ -145,8 +145,6 @@
 					<div class="content_type">${ vo.content }</div>
 
 					<form>
-						<input type="hidden" name="idx" value="${ vo.idx }"> <input
-							type="hidden" name="pwd" value="${ vo.pwd }">
 						<div>
 							비밀번호(${ vo.pwd }):<input type="password" name="c_pwd"> <input
 								class="btn btn-info" type="button" value="수정"

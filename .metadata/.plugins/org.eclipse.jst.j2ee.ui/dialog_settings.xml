@@ -6,10 +6,14 @@
 		<item value="Apache Tomcat v8.5"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\My_Study\Web_Study\2020_0713_MemberTest.war"/>
+		<item value="C:\My_Study\Web_Study\2020_0708_Visit.war"/>
 		<item value="C:\Users\USER\Desktop\2020_0701_DBTest.war"/>
 		<item value="C:\Users\USER\Desktop\2020_0610_Hello.war"/>
 	</list>
 	<list key="J2EE_IMPORT_null">
+		<item value="C:\My_Study\Web_Study\2020_0713_MemberTest.war"/>
+		<item value="C:\My_Study\Web_Study\2020_0708_Visit.war"/>
 		<item value="C:\Users\USER\Desktop\2020_0701_DBTest.war"/>
 	</list>
 </section>

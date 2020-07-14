@@ -17,10 +17,14 @@
 <fullyQualifiedTypeName name="java.lang.InternalError"/>
 <fullyQualifiedTypeName name="vo.SungVo"/>
 <fullyQualifiedTypeName name="dao.SungTBDao"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="vo.VisitVo"/>
 <fullyQualifiedTypeName name="sun.util.locale.ParseStatus"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="vo.VisitVo"/>
+<fullyQualifiedTypeName name="dao.VisitDao"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.Select"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="vo.MemberVo"/>
+<fullyQualifiedTypeName name="dao.MemberDao"/>
 </qualifiedTypeNameHistroy>
