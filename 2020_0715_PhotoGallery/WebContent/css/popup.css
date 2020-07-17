@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#popup {
+	width: 420px;
+	min-height: 550px;
+	background-color: tomato;
+	opacity: 1.0;
+	position: absolute;
+	color: white;
+	padding: 20px;
+}
+
+#popup>img {
+	width: 380px;
+	height: 380px;
+}
+
+#p_title {
+	height: 30px;
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px black;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+#p_content {
+	min-height: 50px;
+	height: auto;
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px black;
+	padding: 5px;
+	margin-bottom: 5px;
+}
+
+#p_name {
+	height: 50px;
+	border: 1px solid white;
+	box-shadow: 1px 1px 1px black;
+	margin-bottom: 5px;
+	padding: 5px;
+}

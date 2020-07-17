@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="vo.SawonVo"/>
 <fullyQualifiedTypeName name="dao.SawonDao"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
@@ -22,9 +21,18 @@
 <fullyQualifiedTypeName name="vo.VisitVo"/>
 <fullyQualifiedTypeName name="dao.VisitDao"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.Select"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vo.MemberVo"/>
 <fullyQualifiedTypeName name="dao.MemberDao"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+<fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="vo.PhotoVo"/>
+<fullyQualifiedTypeName name="org.apache.catalina.startup.SetContextPropertiesRule"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.websocket.Session"/>
 </qualifiedTypeNameHistroy>
