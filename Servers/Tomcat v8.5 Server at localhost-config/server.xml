@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="2020_0713_MemberTest" path="/2020_0713_MemberTest" reloadable="true" source="org.eclipse.jst.jee.server:2020_0713_MemberTest"/><Context docBase="2020_0713_MemberTest(Th)" path="/2020_0713_MemberTest(Th)" reloadable="true" source="org.eclipse.jst.jee.server:2020_0713_MemberTest(Th)"/><Context docBase="2020_0714_SessionTracking" path="/2020_0714_SessionTracking" reloadable="true" source="org.eclipse.jst.jee.server:2020_0714_SessionTracking"/><Context docBase="2020_0715_FileUploadTest" path="/2020_0715_FileUploadTest" reloadable="true" source="org.eclipse.jst.jee.server:2020_0715_FileUploadTest"/><Context docBase="2020_0715_PhotoGallery" path="/2020_0715_PhotoGallery" reloadable="true" source="org.eclipse.jst.jee.server:2020_0715_PhotoGallery"/><Context docBase="2020_07_team" path="/2020_07_team" reloadable="true" source="org.eclipse.jst.jee.server:2020_07_team"/></Host>
+      <Context docBase="2020_0720_XmlTest" path="/2020_0720_XmlTest" reloadable="true" source="org.eclipse.jst.jee.server:2020_0720_XmlTest"/><Context docBase="2020_0720_NaverOpenApi" path="/2020_0720_NaverOpenApi" reloadable="true" source="org.eclipse.jst.jee.server:2020_0720_NaverOpenApi"/><Context docBase="2020_0720_NaverOpenApiShop" path="/2020_0720_NaverOpenApiShop" reloadable="true" source="org.eclipse.jst.jee.server:2020_0720_NaverOpenApiShop"/></Host>
     </Engine>
   </Service>
 </Server>

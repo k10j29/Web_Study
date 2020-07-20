@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- Bootstrap Library  -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	function find_item() {
+		//입력값 얻어오기
+		var item_name = $("#item_name").val().trim();
+
+		if (item_name == '') {
+			alert('검색할 제품명을 입력하세요');
+			$("#item_name").val("");
+			$("#item_name").focus();
+			
+			return;
+		}
+
+		var page = $("#page").val();
+		var display = $("#display").val();
+
+		var start = (page - 1) * display + 1;
+
+		//Ajax요청
+		$.ajax({
+			url : "item_search.do",
+			data : {
+				"item_name" : item_name,
+				"start" : start,
+				"display" : display
+			},
+			success : function(res_data) {
+
+				//수신받은 html을 <div id=disp>넣기
+				$("#disp").html(res_data);
+			}
+		});
+
+	}
+</script>
+
+<style type="text/css">
+#disp {
+	width: 800px;
+}
+</style>
+
+
+</head>
+<body>
+	검색 제품명 :
+	<input id="item_name">
+	<input type="button" value="검색" onclick="find_item();">
+
+	<!-- 페이지 -->
+	페이지:
+	<select id="page">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+	</select>
+	<!-- 검색갯수 -->
+	검색갯수:
+	<select id="display">
+		<option value="10">10개씩</option>
+		<option value="20">20개씩</option>
+		<option value="30">30개씩</option>
+		<option value="40">40개씩</option>
+		<option value="50">50개씩</option>
+		<option value="100">100개씩</option>
+	</select>
+
+	<hr>
+	<div id="disp"></div>
+
+</body>
+</html>
