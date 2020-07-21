@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Bootstrap Library  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+  /* jQuery 초기화 이벤트 */
+  //$(document).ready(function(){});
+  
+  $(function(){
+	  
+	  //검색버튼이 눌리면
+	  $("#btn_search").click(function(){
+		  
+		  //선택된 값 읽어오기
+		  var deptno = $("#deptno").val();
+		  
+		  //Ajax전송
+		  $.ajax({
+			  url:"dept_list.do",//SawonDeptListAction
+			  data:{"deptno":deptno},
+			  success:function(res_data){
+				  
+				  $("#disp").html(res_data);
+				  
+			  }
+		  });
+		  
+	  });
+	  
+  });
+
+</script>
+
+</head>
+<body>
+<div align="center">
+부서:<select id="deptno">
+         <option value="0">전체보기</option>
+         <option value="10">10번 부서</option>
+         <option value="20">20번 부서</option>
+         <option value="30">30번 부서</option>
+         <option value="40">40번 부서</option>
+     </select>
+     <input id="btn_search" type="button"  value="검색">
+</div>     
+<hr>
+<div id="disp"></div>     
+      
+
+</body>
+</html>

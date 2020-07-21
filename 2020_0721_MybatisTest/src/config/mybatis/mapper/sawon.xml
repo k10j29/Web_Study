@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sawon">
+
+    <!-- 전체 조회 -->
+ 	<select id="sawon_list"   resultType="vo.SawonVo" >
+ 		select * from sawon
+ 	</select>
+  
+    <!-- 부서별 조회 -->
+    <!-- parameter변수가 1개인경우(int,String) 변수명은 
+         아무이름이나 상관없다
+     --> 
+    <select id="sawon_list_deptno"  parameterType="int"  
+                                    resultType="vo.SawonVo" >
+ 		select * from sawon where deptno=#{ deptno }
+ 	</select>
+ 	
+ 	 <select id="sawon_list_sajob"  parameterType="String"  
+                                    resultType="vo.SawonVo" >
+ 		select * from sawon where sajob=#{ sajob }
+ 	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

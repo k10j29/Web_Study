@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="javax.naming.Context"/>
 <fullyQualifiedTypeName name="dao.DeptDao"/>
 <fullyQualifiedTypeName name="vo.DeptVo"/>
-<fullyQualifiedTypeName name="vo.SawonVo"/>
 <fullyQualifiedTypeName name="dao.SawonDao"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
@@ -38,9 +37,12 @@
 <fullyQualifiedTypeName name="vo.PersonVo"/>
 <fullyQualifiedTypeName name="org.jdom2.Element"/>
 <fullyQualifiedTypeName name="org.jdom2.Document"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vo.BookVo"/>
 <fullyQualifiedTypeName name="util.MySearchUtil"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="vo.ShopVo"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="vo.SawonVo"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 </qualifiedTypeNameHistroy>
