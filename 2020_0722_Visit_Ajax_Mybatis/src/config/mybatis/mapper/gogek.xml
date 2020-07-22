@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gogek">
+
+    <resultMap id="result_gogek" type="vo.GogekVo" >
+        
+        <result column="bun"   property="gobun"  />
+        <result column="name"  property="goname"  />
+        <result column="goaddr"  property="goaddr"  />
+    
+    </resultMap>
+
+
+ 	<select id="gogek_list"   resultMap="result_gogek" >
+ 		select 
+ 		  gobun bun,goname name,goaddr,gojumin,godam 
+ 		from gogek
+ 	</select>
+  
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

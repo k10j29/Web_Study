@@ -1,0 +1,228 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#main_box {
+	width: 600px;
+	border: 1px solid gray;
+	margin: auto;
+	margin-top: 20p;
+	font-size: 10pt;
+}
+
+#title {
+	font-family: d2coding;
+	text-align: center;
+	font-size: 23pt;
+	color: tomato;
+	text-shadow: 1px 1px 2px black;
+}
+
+.content_type {
+	width: 95%;
+	border: 1px solid gray;
+	min-height: 50px;
+	margin-bottom: 10px;
+	height: auto;
+	box-shadow: 1px 1px black;
+	padding: 10px;
+}
+</style>
+
+<!-- bootstrap library -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	function del(f) {
+
+		//사용자 입력 비번
+		var c_pwd = f.c_pwd.value.trim();
+
+		if (c_pwd == '') {
+			alert('삭제비밀번호를 입력하세요');
+			f.c_pwd.value = '';
+			f.c_pwd.focus();
+			return;
+		}
+
+		/////////////////////////////////////////////////////////////////////
+		//Ajax 를 이용해서 비번을 확인 서버한테 물어보기
+		/////////////////////////////////////////////////////////////////////
+
+		//서버한테 컨펌 값주기
+		//js 에서 json {}
+		$.ajax({
+
+			type : 'GET', //POST 로 요청하겠습니다. 생략시 기본 GET
+			url : 'check_pwd.do', //요청한 서버정보)) //VisitCheckPwdAction 
+			data : {
+				'idx' : f.idx.value,
+				'c_pwd' : c_pwd
+			},//파라미터)) //아래 form 이 가지고있는 idx
+			dataType : 'json', //수신 데이터 타입 (json 으로 해보기)
+			success : function(res_data) {
+				//res_data = {"result":true}
+
+				//비번틀린경우
+				if (res_data.result == false) {
+					alert('비밀번호가 틀립니다');
+					return;
+				}
+
+				//맞는경우
+
+				//최종 삭제 확인    
+				if (confirm("정말 삭제 하시겠습니까?") == false)
+					return;
+
+				//삭제요청코드  
+				location.href = "delete.do?idx=" + f.idx.value;
+
+			},
+			error : function(err) {
+				alert(err.status);
+				alert(err.responseText); //error 확인해보기 404 찍어보기
+				//alert(err.responseText); //error 확인해보기 (responseText) 응답 텍스트 찍어본것
+
+			}
+		});
+
+		//비번비교는 서버에서 진행 
+
+		/* 	//비번 비교
+			if (pwd != c_pwd) {
+				alert('비밀번호가 틀립니다');
+				f.c_pwd.value = '';
+				f.c_pwd.focus();
+				return;
+			} */
+
+		//최종 삭제 확인    
+		//if (confirm("정말 삭제 하시겠습니까?") == false)
+		//	return;
+		//방법1) 자바스크립트 이용한 전송
+		//             VisitDeleteAction  
+		//location.href = "delete.do?idx=" + f.idx.value;
+		//방법2) form data 전송
+		//f.action = "delete.do";
+		//f.submit();
+	}
+
+	function modify_form(f) {
+
+		var c_pwd = f.c_pwd.value.trim();//사용자 입력 비번
+
+		if (c_pwd == '') {
+			alert('수정비밀번호를 입력하세요');
+			f.c_pwd.value = '';
+			f.c_pwd.focus();
+			return;
+		}
+
+		$.ajax({
+
+			type : 'GET', //POST 로 요청하겠습니다. 생략시 기본 GET
+			url : 'check_pwd.do', //요청한 서버정보)) //VisitCheckPwdAction 
+			data : {
+				'idx' : f.idx.value,
+				'c_pwd' : c_pwd
+			},//파라미터)) //아래 form 이 가지고있는 idx
+			dataType : 'json', //수신 데이터 타입 (json 으로 해보기)
+			success : function(res_data) {
+				//res_data = {"result":true}
+				//비번틀린경우
+				if (res_data.result == false) {
+					alert('비밀번호가 틀립니다');
+					return;
+				}
+
+				//맞는경우
+
+				//최종 삭제 확인    
+				if (confirm("수정 하시겠습니까?") == false)
+					return;
+
+				//삭제요청코드  
+				location.href = "modify_form.do?idx=" + f.idx.value;
+
+			},
+			error : function(err) {
+				alert(err.status);
+				alert(err.responseText); //error 확인해보기 404 찍어보기
+				//alert(err.responseText); //error 확인해보기 (responseText) 응답 텍스트 찍어본것
+
+			}
+		});
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="main_box">
+
+		<h1 id="title">♬ 방명록 작성 ♬ ~ ♬ ~</h1>
+		<div align="right">
+			<input class="btn btn-success" type="button" value="방명록 쓰기"
+				onclick="location.href='insert_form.do'">
+		</div>
+
+		<br>
+
+
+		<!-- 데이터가 없는경우 -->
+		<c:if test="${ empty list }">
+			<div>게시물이 존재하지 않습니다.</div>
+		</c:if>
+
+
+		<!-- 데이터가 있는 경우 -->
+		<!--  for(VisitVo vo : list) 동일 -->
+		<c:forEach var="vo" items="${ list }">
+			<div class="panel panel-success">
+				<!-- 작성자(IP) 작성일자 -->
+				<div class="panel-heading">
+					<h4>
+						${ vo.name }(${ vo.ip })<br> ${ fn:substring(vo.regdate,0,16) }
+					</h4>
+				</div>
+				<!-- 
+	           내용
+	           비번      수정  삭제
+	       -->
+				<div class="panel-body">
+					<div class="content_type">${ vo.content }</div>
+
+					<form>
+						<input type="hidden" name="idx" value="${ vo.idx }">
+						<div>
+							비밀번호(${ vo.pwd }):<input type="password" name="c_pwd"> <input
+								class="btn btn-info" type="button" value="수정"
+								onclick="modify_form(this.form);"> <input
+								class="btn btn-danger" type="button" value="삭제"
+								onclick="del(this.form);">
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+		</c:forEach>
+	</div>
+
+</body>
+</html>
