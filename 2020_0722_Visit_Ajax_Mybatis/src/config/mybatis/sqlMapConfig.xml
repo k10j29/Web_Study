@@ -3,6 +3,12 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <!-- 타입에 대한 별칭(명) -->
+    <typeAliases>
+    	<typeAlias type="kr.co.increpas.visit.vo.VisitVo"  alias="visit"/>
+    </typeAliases>
+
 	<environments default="">
 		<environment id="">
 			<transactionManager type="JDBC" />
@@ -13,11 +19,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		</environment>
 	</environments>
 	<mappers>
-	
-	
 		<mapper resource="config/mybatis/mapper/visit.xml" />
-		
-		
-		
 	</mappers>
 </configuration>

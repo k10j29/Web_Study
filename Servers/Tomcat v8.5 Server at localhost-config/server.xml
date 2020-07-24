@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="2020_0721_MybatisTest" path="/2020_0721_MybatisTest" reloadable="true" source="org.eclipse.jst.jee.server:2020_0721_MybatisTest"/><Context docBase="2020_0722_Visit_Ajax_Mybatis" path="/2020_0722_Visit_Ajax_Mybatis" reloadable="true" source="org.eclipse.jst.jee.server:2020_0722_Visit_Ajax_Mybatis"/><Context docBase="2020_0722_MyHome" path="/2020_0722_MyHome" reloadable="true" source="org.eclipse.jst.jee.server:2020_0722_MyHome"/><Context docBase="2020_0722_html" path="/2020_0722_html" reloadable="true" source="org.eclipse.jst.jee.server:2020_0722_html"/></Host>
+      <Context docBase="2020_0723_homepage" path="/2020_0723_homepage" reloadable="true" source="org.eclipse.jst.jee.server:2020_0723_homepage"/><Context docBase="2020_0722_Visit_Ajax_Mybatis" path="/2020_0722_Visit_Ajax_Mybatis" reloadable="true" source="org.eclipse.jst.jee.server:2020_0722_Visit_Ajax_Mybatis"/><Context docBase="2020_0721_MybatisTest" path="/2020_0721_MybatisTest" reloadable="true" source="org.eclipse.jst.jee.server:2020_0721_MybatisTest"/></Host>
     </Engine>
   </Service>
 </Server>

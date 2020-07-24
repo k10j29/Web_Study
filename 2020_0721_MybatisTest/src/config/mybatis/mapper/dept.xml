@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dept">
+
+	<resultMap type="vo.DeptVo" id="dept_map">
+		<result property="deptno" column="deptno" />
+
+		<collection property="sa_list" column="{no=deptno}"
+			select="sawon_list_deptno" />
+	</resultMap>
+
+	<resultMap type="vo.SawonVo" id="sawon_map">
+		<result property="sabun" column="sabun" />
+		<collection property="go_list" column="{no=sabun}"
+			select="gogek_list_godam" />
+	</resultMap>
+
+	<!-- 고객목록 -->
+	<select id="gogek_list_godam" resultType="vo.GogekVo">
+		select * from gogek where godam=#{ no }
+	</select>
+
+	<!-- 사원목록 -->
+	<select id="sawon_list_deptno" resultMap="sawon_map">
+		select * from sawon where deptno=#{ no }
+	</select>
+
+
+	<!-- 부서목록 -->
+	<select id="dept_list" resultMap="dept_map">
+		select deptno,dname,loc from dept
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

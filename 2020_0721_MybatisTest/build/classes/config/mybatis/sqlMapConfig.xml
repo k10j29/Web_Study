@@ -3,6 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    
+    <typeAliases>
+       <typeAlias type="vo.SawonVo"  alias="sawon"/>
+       <typeAlias type="vo.GogekVo"  alias="gogek"/>
+       <typeAlias type="vo.DeptVo"   alias="dept"/>
+    </typeAliases>
+    
 	<environments default="">
 		<environment id="">
 			<transactionManager type="JDBC" />
@@ -15,5 +22,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="config/mybatis/mapper/sawon.xml" />
 		<mapper resource="config/mybatis/mapper/gogek.xml" />
+		<mapper resource="config/mybatis/mapper/dept.xml" />
 	</mappers>
 </configuration>

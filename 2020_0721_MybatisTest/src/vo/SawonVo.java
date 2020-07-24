@@ -1,4 +1,7 @@
 package vo;
+
+import java.util.List;
+
 /*
  VO : Value Object
  1.가급적이면 DB필드명과 동일한 속성명을 사용
@@ -9,7 +12,15 @@ public class SawonVo {
 	int sabun,deptno,sapay,samgr;
 	String saname,sasex,sajob,sahire;
 	
+	List<GogekVo>  go_list;
 	
+	
+	public List<GogekVo> getGo_list() {
+		return go_list;
+	}
+	public void setGo_list(List<GogekVo> go_list) {
+		this.go_list = go_list;
+	}
 	
 	public int getSabun() {
 		return sabun;

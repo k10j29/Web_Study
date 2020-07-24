@@ -17,11 +17,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                                     resultType="vo.SawonVo" >
  		select * from sawon where deptno=#{ deptno }
  	</select>
- 	
- 	 <select id="sawon_list_sajob"  parameterType="String"  
-                                    resultType="vo.SawonVo" >
- 		select * from sawon where sajob=#{ sajob }
- 	</select>
 
 </mapper>
 
